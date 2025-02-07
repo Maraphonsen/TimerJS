@@ -5,7 +5,7 @@ const startButton = document.getElementById('startButton');
 const stopButton = document.getElementById('stopButton');
 const resetButton = document.getElementById('resetButton');
 const display = document.getElementById('display');
-
+// ХУЙХУЙХУЙХУЙУХЙ
 let timer;
 let timeLeft = 0;
 let isRunning = false; // Флаг для отслеживания состояния таймера
