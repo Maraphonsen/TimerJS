@@ -5,12 +5,12 @@ const startButton = document.getElementById('startButton');
 const stopButton = document.getElementById('stopButton');
 const resetButton = document.getElementById('resetButton');
 const display = document.getElementById('display');
-// ХУЙХУЙХУЙХУЙУХЙ
+
 let timer;
 let timeLeft = 0;
-let isRunning = false; // Флаг для отслеживания состояния таймера
+let isRunning = false; 
 
-// Функция для обновления отображения таймера
+// Обновление
 const updateDisplay = () => {
     const hours = Math.floor(timeLeft / 3600);
     const minutes = Math.floor((timeLeft % 3600) / 60);
@@ -20,7 +20,7 @@ const updateDisplay = () => {
         `${String(hours).padStart(2, '0')}:${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')}`;
 };
 
-// Функция для запуска таймера
+// Функция для старта
 const startTimer = () => {
     if (!isRunning && timeLeft > 0) {
         isRunning = true;
@@ -38,7 +38,7 @@ const startTimer = () => {
     }
 };
 
-// Функция для остановки таймера
+// Функция для паузы
 const stopTimer = () => {
     if (isRunning) {
         clearInterval(timer);
@@ -47,17 +47,17 @@ const stopTimer = () => {
     }
 };
 
-// Функция для сброса таймера
+// Функция для сброса 
 const resetTimer = () => {
     stopTimer();
     timeLeft = 0;
     updateDisplay();
 };
 
-// Обработчик для кнопки "Старт"
+// Старт
 startButton.addEventListener('click', () => {
     if (!isRunning) {
-        // Если таймер не запущен, устанавливаем новое время
+        // Если таймер не запущен
         if (timeLeft === 0) {
             const hours = parseInt(hoursInput.value, 10) || 0;
             const minutes = parseInt(minutesInput.value, 10) || 0;
@@ -74,8 +74,8 @@ startButton.addEventListener('click', () => {
     }
 });
 
-// Обработчик для кнопки "Стоп"
+// Пауза
 stopButton.addEventListener('click', stopTimer);
 
-// Обработчик для кнопки "Сброс"
+// Сброс
 resetButton.addEventListener('click', resetTimer);
